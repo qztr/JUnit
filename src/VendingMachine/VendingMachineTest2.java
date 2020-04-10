@@ -4,16 +4,22 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 import VendingMachine.VendingMachine.SelectionMenu;
 
 public class VendingMachineTest2 {
-	
+	Drink drink = null;
 	VendingMachine vend;
 
 	@Before
 	public void setUp() throws Exception {
 		vend = new VendingMachine();
+		//drink = new Drink();
 	}
 
 	@Test
@@ -30,22 +36,8 @@ public class VendingMachineTest2 {
 	public void testGetDisplayMenu() {
 		
 	}
+	
 
-	@Test
-	public void testDisplayMenu() {
-		System.out.print("Please select your drink from the menu:\n"+
-	            "\tCOLA\tprice: [3.0] euro	still have: [10]can\n"+
-				"\tCOFFEE\t\tprice: [2.5] euro	still have: [10]can"+
-	            "\tORANGE_JUICE	price: [5.0] euro	still have: [10]can\r\n" + 
-	            "\tQUIT\n\n"+
-	            "Enter:\n");
-//		sb.append("Please select your drink from the menu:");sb.append(NLC);
-//		 sb.append("\t" + SelectionMenu.COLA + "\t\tprice: [" + drinkChamber.cola.price + "] euro" + "\tstill have: [" + drinkChamber.getColaCount().toString() + "]can"); sb.append(NLC);
-//		 sb.append( "\t" + SelectionMenu.COFFEE + "\t\tprice: [" + drinkChamber.coffee.price + "] euro" + "\tstill have: [" + drinkChamber.getCoffeeCount().toString() + "]can"); sb.append(NLC);
-//		 sb.append( "\t" + SelectionMenu.ORANGE_JUICE + "\tprice: [" + drinkChamber.oj.price + "] euro" + "\tstill have: [" +  drinkChamber.getOJCount().toString() + "]can"); sb.append(NLC);
-//		 sb.append("\t" + "QUIT");sb.append(NLC);sb.append(NLC);
-//				 sb.append( "Enter:");sb.append(NLC);
-	}
 
 
 
@@ -100,17 +92,52 @@ public class VendingMachineTest2 {
 
 	@Test
 	public void testCaptureMoney() {
-		fail("Not yet implemented");
+		//assertTrue(vend.captureMoney("COFFEE", 2.5));
+		//assertTrue(vend.captureMoney("COLA", 3.0));
+		assertTrue(vend.captureMoney("COLA", 3.0));
+		assertTrue(vend.captureMoney("COLA", 3.0));
+		
+	}
+	
+	@Test
+	public void testCaptureMoney1() {
+		//assertTrue(vend.captureMoney("COFFEE", 2.5));
+		//assertTrue(vend.captureMoney("COLA", 3.0));
+		assertTrue(vend.captureMoney("ORANGE_JUICE", 5.0));
+		
+	}
+	
+	@Test
+	public void testCaptureMoney2() {
+		//assertTrue(vend.captureMoney("COFFEE", 2.5));
+		//assertTrue(vend.captureMoney("COLA", 3.0));
+		assertTrue(vend.captureMoney("COFFEE", 2.5));
+		
 	}
 
 	@Test
-	public void testProcessSelection() {
-		fail("Not yet implemented");
+	public void testProcessSelection1() {
+		
+		//assertEquals("Coffee", vend.processSelection("COFFEE", true));
+		//drink = drinkChamber.takeAOJ();
+		assertEquals(drink.getClass(), vend.processSelection("COLA", false));
+	}
+	
+	@Test
+	public void testProcessSelection2() {
+		//assertEquals("Coffee", vend.processSelection("COFFEE", true));
+		assertEquals("Cola", vend.processSelection("COLA", true));
+	}
+	
+	@Test
+	public void testProcessSelection3() {
+		//assertEquals("Coffee", vend.processSelection("COFFEE", true));
+		//assertTrue(vend.processSelection("COLA", false));
 	}
 
 	@Test
 	public void testCaptureInputAndRespond() {
-		fail("Not yet implemented");
+		//assertTrue(vend.captureInputAndRespond();
 	}
 
 	@Test
