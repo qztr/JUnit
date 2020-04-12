@@ -55,9 +55,9 @@ public class DrinkChamber {
         if (getCoffeeCount().intValue() - 1 < 0)
         	    {
         		System.err.println("cofee");
-        		return null;
+        		return null; 
         	    }
-        coffeeContainer.addItem(coffee, getColaCount().intValue() - 1);
+        coffeeContainer.addItem(coffee, getCoffeeCount().intValue() - 1);
         return coffee;
 }
     
@@ -80,7 +80,7 @@ public class DrinkChamber {
         	System.err.println("orange juice");
         	return null;
         	}
-        ojContainer.addItem(oj, getColaCount().intValue() - 1);
+        ojContainer.addItem(oj, getOJCount().intValue() - 1);
         return oj; 
 }
     

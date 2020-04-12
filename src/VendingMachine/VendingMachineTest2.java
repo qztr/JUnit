@@ -47,6 +47,7 @@ public class VendingMachineTest2 {
 	public void testDisplayReturningCoinsTE() {
 		double[] array = {0.0,0.0,0.0,1.0};
 		assertEquals(array,vend.displayReturningCoins(2.0));
+		
 	}
 
 	@Test

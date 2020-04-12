@@ -110,7 +110,7 @@ public class VendingMachine {
 			 sb.append( "\t" + SelectionMenu.COFFEE + "\t\tprice: [" + drinkChamber.coffee.price + "] euro" + "\tstill have: [" + drinkChamber.getCoffeeCount().toString() + "]can"); sb.append(NLC);
 			 sb.append( "\t" + SelectionMenu.ORANGE_JUICE + "\tprice: [" + drinkChamber.oj.price + "] euro" + "\tstill have: [" +  drinkChamber.getOJCount().toString() + "]can"); sb.append(NLC);
 			 sb.append("\t" + "QUIT");sb.append(NLC);sb.append(NLC);
-					 sb.append( "Enter:");sb.append(NLC);
+					 sb.append( "Enter:");sb.append(NLC); 
 			
 			
 			displayMenu = sb.toString();
@@ -292,19 +292,15 @@ public class VendingMachine {
                             break;
                     case COFFEE: 
                             price = drinkChamber.coffee.price;
-                            if (paymentOK) { drink = drinkChamber.takeACoffee(); } 
-                            else {
-                                    System.out.printf("The price is %f EURO, please the coin."+NLC, drinkChamber.coffee.price);
-                                    captureMoney(selection, price);
-                            }
+                            System.out.printf("The price is %f EURO, please the coin."+NLC, drinkChamber.coffee.price);
+                            if (captureMoney(selection, price)) { drink = drinkChamber.takeACoffee();}
+                            else {System.out.printf("ERROR");}
                             break;
                     case ORANGE_JUICE: 
                             price = drinkChamber.oj.price;
-                            if (paymentOK) { drink = drinkChamber.takeAOJ(); } 
-                            else {
-                                    System.out.printf("The price is %f EURO, please put in the coin."+NLC, drinkChamber.oj.price);                                      
-                                    captureMoney(selection, price);
-                            } 
+                            System.out.printf("The price is %f EURO, please the coin."+NLC, drinkChamber.oj.price);
+                            if (captureMoney(selection, price)) { drink = drinkChamber.takeACoffee();}
+                            else {System.out.printf("ERROR");}
                             break;
                     case QUIT:
             }

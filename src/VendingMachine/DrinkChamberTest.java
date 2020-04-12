@@ -28,8 +28,8 @@ public class DrinkChamberTest {
 	public void testTakeACola() { 
 		DrinkChamber dc = new DrinkChamber();
 		dc.loadInventory();
-		Cola cola = new Cola();
-		System.out.print(dc.getColaCount());
+		//Cola cola = new Cola();
+		//System.out.print(dc.getColaCount());
 	    assertEquals(dc.cola,dc.takeACola());
 		
 	
