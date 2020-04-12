@@ -115,6 +115,7 @@ public class VendingMachine {
 			
 			displayMenu = sb.toString();
 			return(displayMenu);
+			
 		}
 		
              
@@ -323,6 +324,7 @@ public class VendingMachine {
         	for (int i = 0; i < 10; i++){
         		this.DisplayMenu();
         		String selection = null;
+        		
         		
         		try {
                     selection = choosen.readLine();                    
